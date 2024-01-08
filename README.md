@@ -26,7 +26,11 @@ Setting below to your `keybindings.json`
     "when": "neovim.mode == insert && editorTextFocus",
     "args": "j"
 }
-// to enable jk add also:
+```
+
+to enable jk add also:
+
+```json
 {
     "command": "vscode-neovim.compositeEscape2",
     "key": "k",
