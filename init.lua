@@ -1,12 +1,6 @@
 local vscode = require("vscode-neovim")
 local opt = vim.opt
 
--- set current directory to the directory of the current file for those who use
--- custom init.lua config file can't require other files correctly
-local file_path = debug.getinfo(1, "S").source:sub(2)
-local file_directory = file_path:match "(.*[/\\])"
-vim.api.nvim_set_current_dir(file_directory .. "lua")
-
 local utils = require("utils")
 
 vim.g.mapleader = " "
@@ -29,3 +23,13 @@ opt.updatetime = 250
 for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
     vim.g["loaded_" .. provider .. "_provider"] = 0
 end
+
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("bootstrap").lazy(lazypath)
+end
+vim.opt.rtp:prepend(lazypath)
+require("plugins")

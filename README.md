@@ -1,8 +1,8 @@
 # My vscode-vim configs
 
 ## TODO
-1. [ ] Include [lazy.nvim](https://github.com/folke/lazy.nvim)
-2. [ ] Surround Extinsion
+1. [X] Include [lazy.nvim](https://github.com/folke/lazy.nvim)
+2. [X] Surround Extinsion
 
 ## Setup environment
 
@@ -12,8 +12,24 @@
     ```bash
     git clone https://github.com/youmin1017/vscode-neovim-config.git ~/.config/nvim-vscode
     ```
-4. Set extension `VSCode Neovim` init.vim path to your init.lua (you download previously) path. E.g. `~/.config/nvim-vscode/init.lua`
+4. To seperate configurations from normal nvim, set extension `VSCode Neovim` APP_Name to your config path
+
+    **Example**: If your config path is `~/.config/nvim-vscode`, set NVIM_APPNAME to `nvim-vscode`
+
+    ```json
+    {
+      "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+    }
+    ```
+
+    > [!TIP]
+    > Optional information to help a user be more successful.
+
+
 5. Done
+
+> [!IMPORTANT]
+> You should restart `vscode-neovim` extension after first init, since I could not close lazy.nvim running in background(?)
 
 ## Using JK to escape insert mode
 
