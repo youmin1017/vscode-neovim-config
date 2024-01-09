@@ -48,6 +48,10 @@ M.general = {
     -- { "key": "alt+k", "command": "vscode-neovim.send", "args": "<a-k>", "when": "editorTextFocus && neovim.init" },
     ["<M-j>"] = { ":m .+1<CR>==", "move selected block up and stay in visual mode", opts = { silent = true } },
     ["<M-k>"] = { ":m .-2<CR>==", "move selected down and stay in visual mode", opts = { silent = true } },
+
+    ["<leader>ff"] = { function()
+      vscode.call("editor.toggleFold")
+    end }
   },
   x = {
     ----- VSCode -----
