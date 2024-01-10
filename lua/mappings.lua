@@ -63,6 +63,8 @@ M.general = {
     ----- VIM -----
     ["<"] = { "<gv", "indent backword and stay in visual mode" },
     [">"] = { ">gv", "indent forward and stay in visual mode" },
+    ["gh"] = { "g0", "Go to beginning" },
+    ["gl"] = { "g$", "Go to end of line" },
     ["<M-j>"] = { ":move '>+1<CR>gv-gv", "move selected block up and stay in visual mode", opts = { silent = true } },
     ["<M-k>"] = { ":move '<-2<CR>gv-gv", "move selected down and stay in visual mode", opts = { silent = true } },
 
