@@ -30,12 +30,13 @@ M.general = {
     ["<leader>Y"] = { '"+yy', "Yank line to system clipboard" },
     ["<leader>p"] = { '"+p', "Paste from system clipboard" },
     ["<leader>P"] = { '"+P', "Paste from system clipboard before cursor" },
+    ["<leader>d"] = { '"+d', "Delete to system clipboard" },
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
-    -- Working but make some latency
+    -- To move across wrapped lines, it is working but make some latency. Use `gj` and `gk` instead.
     -- ["j"] = { function()
     --   vscode.call("cursorMove", { args = { to = "down", by = "wrappedLine", value = vim.v.count1 } })
     -- end },
@@ -68,6 +69,7 @@ M.general = {
     ["<leader>y"] = { '"+y', "Yank to system clipboard in visual mode" },
     ["<leader>p"] = { '"+p', "Paste from system clipboard in visual mode" },
     ["<leader>P"] = { '"+P', "Paste from system clipboard before cursor in visual mode" },
+    ["<leader>d"] = { '"+d', "Delete to system clipboard in visual mode" },
     ["p"] = { '"_dP', "Dont copy replaced text", opts = { silent = true } },
   }
 }
