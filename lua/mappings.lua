@@ -18,6 +18,10 @@ M.general = {
     ["<leader>X"] = { function()
       vscode.call("workbench.action.closeAllEditors")
     end },
+    ["<leader>ff"] = { function()
+      vscode.call("editor.toggleFold")
+    end },
+
     ------ VIM -----
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<"] = { "<<", "indent forward easily", opts = { nowait = true } },
@@ -50,9 +54,6 @@ M.general = {
     ["<M-j>"] = { ":m .+1<CR>==", "move selected block up and stay in visual mode", opts = { silent = true } },
     ["<M-k>"] = { ":m .-2<CR>==", "move selected down and stay in visual mode", opts = { silent = true } },
 
-    ["<leader>ff"] = { function()
-      vscode.call("editor.toggleFold")
-    end }
   },
   x = {
     ----- VSCode -----
