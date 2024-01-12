@@ -22,6 +22,15 @@ M.general = {
       vscode.call("editor.toggleFold")
     end },
 
+    ["<leader>h"] = { function()
+      local inlay_hints_cfg = "editor.inlayHints.enabled"
+      if vscode.get_config(inlay_hints_cfg) == "offUnlessPressed" then
+        vscode.update_config(inlay_hints_cfg, "on")
+      else
+        vscode.update_config(inlay_hints_cfg, "offUnlessPressed")
+      end
+    end, "Toggle inlay hints" },
+
     ------ VIM -----
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<"] = { "<<", "indent forward easily", opts = { nowait = true } },
@@ -38,7 +47,7 @@ M.general = {
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
-    ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
+    -- ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
     -- To move across wrapped lines, it is working but make some latency. Use `gj` and `gk` instead.
     -- ["j"] = { function()
@@ -54,7 +63,8 @@ M.general = {
     ["<M-j>"] = { ":m .+1<CR>==", "move selected block up and stay in visual mode", opts = { silent = true } },
     ["<M-k>"] = { ":m .-2<CR>==", "move selected down and stay in visual mode", opts = { silent = true } },
 
-    ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" }
+    ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
+
   },
   x = {
     ----- VSCode -----
