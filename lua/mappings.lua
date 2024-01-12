@@ -27,9 +27,9 @@ M.general = {
     ["<leader>h"] = { function()
       local inlay_hints_cfg = "editor.inlayHints.enabled"
       if vscode.get_config(inlay_hints_cfg) == "offUnlessPressed" then
-        vscode.update_config(inlay_hints_cfg, "on")
+        vscode.update_config(inlay_hints_cfg, "on", "global")
       else
-        vscode.update_config(inlay_hints_cfg, "offUnlessPressed")
+        vscode.update_config(inlay_hints_cfg, "offUnlessPressed", "global")
       end
     end, "Toggle inlay hints" },
 
