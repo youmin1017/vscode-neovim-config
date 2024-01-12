@@ -21,6 +21,9 @@ M.general = {
     ["<leader>ff"] = { function()
       vscode.call("editor.toggleFold")
     end },
+    ["<leader>r"] = { function()
+      vscode.call("editor.action.rename")
+    end },
 
     ["<leader>h"] = { function()
       local inlay_hints_cfg = "editor.inlayHints.enabled"
