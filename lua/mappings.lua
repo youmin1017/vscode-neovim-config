@@ -24,7 +24,6 @@ M.general = {
     ["<leader>r"] = { function()
       vscode.call("editor.action.rename")
     end },
-
     ["<leader>h"] = { function()
       local inlay_hints_cfg = "editor.inlayHints.enabled"
       if vscode.get_config(inlay_hints_cfg) == "offUnlessPressed" then
