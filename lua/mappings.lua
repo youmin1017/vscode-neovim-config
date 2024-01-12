@@ -54,6 +54,7 @@ M.general = {
     ["<M-j>"] = { ":m .+1<CR>==", "move selected block up and stay in visual mode", opts = { silent = true } },
     ["<M-k>"] = { ":m .-2<CR>==", "move selected down and stay in visual mode", opts = { silent = true } },
 
+    ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" }
   },
   x = {
     ----- VSCode -----
