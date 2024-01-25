@@ -33,7 +33,21 @@ M.general = {
       end
     end, "Toggle inlay hints" },
 
-    ------ VIM -----
+    ----- Jupyter Notebook -----
+    ["<leader>jd"] = { function()
+      vscode.call("notebook.cell.clearOutputs")
+    end },
+    ["<leader>jD"] = { function()
+      vscode.call("notebook.clearAllCellsOutputs")
+    end },
+
+    ----- SQL -----
+    -- https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-myssql-client2
+    ["<leader>q"] = { function()
+      vscode.call("mysql.runSQL")
+    end },
+
+    ----- VIM -----
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<"] = { "<<", "indent forward easily", opts = { nowait = true } },
     [">"] = { ">>", "indent forward easily", opts = { nowait = true } },
@@ -62,8 +76,8 @@ M.general = {
     -- If not working, try to add this to your keybindings.json
     -- { "key": "alt+j", "command": "vscode-neovim.send", "args": "<a-j>", "when": "editorTextFocus && neovim.init" },
     -- { "key": "alt+k", "command": "vscode-neovim.send", "args": "<a-k>", "when": "editorTextFocus && neovim.init" },
-    ["<M-j>"] = { ":m .+1<CR>==", "move selected block up and stay in visual mode", opts = { silent = true } },
-    ["<M-k>"] = { ":m .-2<CR>==", "move selected down and stay in visual mode", opts = { silent = true } },
+    ["<M-j>"] = { ":m .+1<CR>==", "move line down", opts = { silent = true } },
+    ["<M-k>"] = { ":m .-2<CR>==", "move line up", opts = { silent = true } },
 
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
 
@@ -73,6 +87,13 @@ M.general = {
     ["<leader>/"] = { function()
       vscode.call("editor.action.commentLine")
     end },
+
+    ----- SQL -----
+    -- https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-myssql-client2
+    ["<leader>q"] = { function()
+      vscode.call("mysql.runSQL")
+    end },
+
     ----- VIM -----
     ["<"] = { "<gv", "indent backword and stay in visual mode" },
     [">"] = { ">gv", "indent forward and stay in visual mode" },
