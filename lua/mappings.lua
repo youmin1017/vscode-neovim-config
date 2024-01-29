@@ -42,9 +42,8 @@ M.general = {
     end },
 
     ----- SQL -----
-    -- https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-myssql-client2
     ["<leader>q"] = { function()
-      vscode.call("mysql.runSQL")
+      vscode.call("mssql.runCurrentStatement")
     end },
 
     ----- VIM -----
@@ -87,11 +86,13 @@ M.general = {
     ["<leader>/"] = { function()
       vscode.call("editor.action.commentLine")
     end },
+    ["<leader>fm"] = { function()
+      vscode.call("editor.action.formatSelection")
+    end },
 
     ----- SQL -----
-    -- https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-myssql-client2
     ["<leader>q"] = { function()
-      vscode.call("mysql.runSQL")
+      vscode.call("mssql.runQuery")
     end },
 
     ----- VIM -----
