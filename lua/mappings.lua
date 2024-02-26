@@ -64,13 +64,14 @@ M.general = {
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
     -- ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
 
-    -- To move across wrapped lines, it is working but make some latency. Use `gj` and `gk` instead.
-    -- ["j"] = { function()
-    --   vscode.call("cursorMove", { args = { to = "down", by = "wrappedLine", value = vim.v.count1 } })
-    -- end },
-    -- ["k"] = { function()
-    --   vscode.call("cursorMove", { args = { to = "up", by = "wrappedLine", value = vim.v.count1 } })
-    -- end },
+    -- To move across wrapped lines
+    -- Note: seems work now?
+    ["j"] = { function()
+      vscode.call("cursorMove", { args = { to = "down", by = "wrappedLine", value = vim.v.count1 } })
+    end },
+    ["k"] = { function()
+      vscode.call("cursorMove", { args = { to = "up", by = "wrappedLine", value = vim.v.count1 } })
+    end },
 
     -- If not working, try to add this to your keybindings.json
     -- { "key": "alt+j", "command": "vscode-neovim.send", "args": "<a-j>", "when": "editorTextFocus && neovim.init" },
