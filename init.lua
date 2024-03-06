@@ -16,6 +16,7 @@ opt.whichwrap:append "<>[]hl"
 opt.timeoutlen = 400
 opt.undofile = true
 opt.scrolloff = 5
+opt.smartcase = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
